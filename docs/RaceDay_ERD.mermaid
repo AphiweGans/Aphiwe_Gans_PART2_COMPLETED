@@ -1,0 +1,57 @@
+erDiagram
+    ORGANISERS ||--o{ EVENTS : organises
+    EVENTS ||--o{ CATEGORIES : contains
+    PARTICIPANTS ||--o{ ENROLMENTS : makes
+    CATEGORIES ||--o{ ENROLMENTS : receives
+    ENROLMENTS ||--o| RESULTS : has
+
+    ORGANISERS {
+        int OrganiserID PK
+        nvarchar FullName
+        nvarchar Email UK
+        nvarchar PasswordHash
+        nvarchar Phone
+        datetime CreatedAt
+    }
+    PARTICIPANTS {
+        int ParticipantID PK
+        nvarchar FullName
+        nvarchar Email UK
+        nvarchar PasswordHash
+        date DateOfBirth
+        nvarchar Gender
+        datetime CreatedAt
+    }
+    EVENTS {
+        int EventID PK
+        int OrganiserID FK
+        nvarchar EventName
+        date EventDate
+        nvarchar Location
+        nvarchar Description
+        decimal Distance "Part 2 addition"
+        int EventType "Part 2 addition"
+        datetime CreatedAt
+    }
+    CATEGORIES {
+        int CategoryID PK
+        int EventID FK
+        nvarchar CategoryName
+        decimal DistanceKm
+        int MaxParticipants
+        decimal EntryFee
+    }
+    ENROLMENTS {
+        int EnrolmentID PK
+        int ParticipantID FK
+        int CategoryID FK
+        datetime EnrolmentDate
+        nvarchar Status
+    }
+    RESULTS {
+        int ResultID PK
+        int EnrolmentID FK,UK
+        time FinishTime
+        int Position
+        nvarchar Status
+    }

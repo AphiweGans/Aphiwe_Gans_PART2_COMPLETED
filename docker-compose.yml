@@ -1,0 +1,21 @@
+services:
+  raceday-api:
+    build:
+      context: .
+      dockerfile: RaceDay.API/Dockerfile
+    container_name: raceday-api
+    ports:
+      - "8081:8081"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+      # Point this at your real SQL Server / Azure SQL connection string.
+      - ConnectionStrings__DefaultConnection=${DB_CONNECTION_STRING}
+      # Origin allowed by the API's CORS policy. Set this to whichever client
+      # app consumes the API; it is unused while no browser client is present.
+      - MvcAppUrl=http://localhost:8080
+    networks:
+      - raceday-network
+
+networks:
+  raceday-network:
+    driver: bridge

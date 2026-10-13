@@ -1,0 +1,36 @@
+# Build results
+[Bb]in/
+[Oo]bj/
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Rider / VS Code
+.idea/
+.vscode/
+
+# Test results
+[Tt]est[Rr]esult*/
+*.trx
+
+# NuGet
+*.nupkg
+**/packages/*
+!**/packages/build/
+
+# Local secrets / environment files (contain real connection strings)
+.env
+appsettings.*.local.json
+*.pfx
+
+# macOS / Windows junk
+.DS_Store
+Thumbs.db

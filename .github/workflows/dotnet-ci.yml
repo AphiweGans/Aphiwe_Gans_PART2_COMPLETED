@@ -1,0 +1,62 @@
+name: RaceDay - Build and Test
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  build-and-test:
+    name: Validate structure, build solution, run unit tests
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Validate repository structure
+        run: |
+          required_paths=(
+            "RaceDay.sln"
+            "README.md"
+            "docs"
+            "RaceDay.Contracts/Dtos.cs"
+            "RaceDay.API/Program.cs"
+            "RaceDay.API/Controllers"
+            "RaceDay.API/Models"
+            "RaceDay.API/Data"
+            "RaceDay.Tests"
+            ".github/workflows"
+          )
+          missing=0
+          for path in "${required_paths[@]}"; do
+            if [ ! -e "$path" ]; then
+              echo "ERROR: Required path missing: $path"
+              missing=1
+            fi
+          done
+          if [ "$missing" -ne 0 ]; then exit 1; fi
+          echo "OK: Repository structure is valid."
+
+      - name: Restore packages
+        run: dotnet restore RaceDay.sln
+
+      - name: Build solution
+        run: dotnet build RaceDay.sln --no-restore --configuration Release
+
+      - name: Run unit tests
+        run: dotnet test RaceDay.sln --no-build --configuration Release --verbosity normal --logger "trx;LogFileName=test-results.trx" --results-directory ./TestResults
+
+      - name: Upload test report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-report
+          path: TestResults/*.trx
