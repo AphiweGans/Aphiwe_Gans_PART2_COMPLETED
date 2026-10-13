@@ -161,7 +161,8 @@ installs .NET 8, **validates the repository structure**, restores, builds the so
 runs all unit tests.
 
 ### GitHub Actions Screenshot
-Green workflow run: **ADD_WORKFLOW_RUN_URL_HERE**
+Green workflow run: <img width="954" height="950" alt="image" src="https://github.com/user-attachments/assets/786b8d25-63d1-4b71-9b0d-098eb074366d" />
+
 
 ![GitHub Actions green build](docs/images/ci-green-build.png)
 
