@@ -99,6 +99,13 @@ See *Repository Structure* above.
 1. Open `RaceDay.sln` in Visual Studio 2022 and set `RaceDay.API` as the startup project.
 2. Press **F5** (or run `dotnet run` in `RaceDay.API`). The root URL redirects to Swagger.
 
+## Note on schema deviation from Part 1
+
+The Events table stores `Distance` and `EventType`, which the original Part 1
+ERD only captured at the Category level. This was added because the Part 2
+functional requirements ask for it on Events directly. Documented here as
+the brief requires for any deliberate design change from Part 1.
+
 ### Authentication
 - `POST /api/auth/register` - creates an Organiser or Participant. The password is
   hashed with BCrypt; the original password is never stored.
