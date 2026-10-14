@@ -163,8 +163,10 @@ runs all unit tests.
 ### GitHub Actions Screenshot
 Green workflow run: <img width="954" height="950" alt="image" src="https://github.com/user-attachments/assets/786b8d25-63d1-4b71-9b0d-098eb074366d" />
 
-
-![GitHub Actions green build](docs/images/ci-green-build.png)
-
 ### Video Presentation
-Unlisted YouTube video: **ADD_YOUR_LINK_HERE**
+Unlisted YouTube video: https://youtu.be/vV5pQ7NL8O4?si=CGCWdxtaVdCiFKM1
+
+### Github Link
+https://github.com/AphiweGans/Aphiwe_Gans_PART2_COMPLETED.git
+
+
