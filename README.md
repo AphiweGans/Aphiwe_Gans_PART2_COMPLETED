@@ -106,6 +106,11 @@ Events, Categories, Enrolments, Results). Log in via
 `POST /api/auth/login` in Swagger first (the browser session keeps the
 cookie), then exercise the protected endpoints from the same page.
 
+Swagger UI loads at the root URL and lists every endpoint grouped by controller, each
+with a summary, expected input and the possible responses (200/201/204/400/401/403/404/409).
+To test: `POST /api/auth/register` -> `POST /api/auth/login` (Swagger keeps the session cookie)
+-> call any protected endpoint. Enum values are numeric: `role` 0 = Organiser, 1 = Participant;
+`eventType` 0 = Run, 1 = Walk, 2 = Cycle.
 
 ## Note on schema deviation from Part 1
 
