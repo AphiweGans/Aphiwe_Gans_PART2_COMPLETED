@@ -29,6 +29,20 @@ event.
 - View their own race results.
 - Can **not** create/edit/delete Events or Categories, change enrolment statuses or capture results (403).
 
+## User Roles
+
+### Organiser
+- Create, update and delete their own Events (only their own).
+- Add, update and delete Categories on their own Events.
+- View enrolments for their own Events.
+- Capture finish time, position and status for a Participant's Enrolment.
+
+### Participant
+- Browse Events and Categories (no login required).
+- Enrol in a Category, view and cancel their own Enrolments.
+- View their own results once an Organiser has captured them.
+- View and update their own profile.
+
 ## Repository Structure
 
 ```
