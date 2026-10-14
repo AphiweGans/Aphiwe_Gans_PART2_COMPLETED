@@ -143,11 +143,7 @@ Routes follow the Part 1 endpoint plan; the guide's equivalent route is shown in
 Full access rules and status codes: [`docs/Part2_Implemented_Endpoints.md`](docs/Part2_Implemented_Endpoints.md).
 
 ### Swagger
-Swagger UI loads at the root URL and lists every endpoint grouped by controller, each
-with a summary, expected input and the possible responses (200/201/204/400/401/403/404/409).
-To test: `POST /api/auth/register` -> `POST /api/auth/login` (Swagger keeps the session cookie)
--> call any protected endpoint. Enum values are numeric: `role` 0 = Organiser, 1 = Participant;
-`eventType` 0 = Run, 1 = Walk, 2 = Cycle.
+
 
 Suggested demo flow: register Organiser -> login -> create Event -> create Categories ->
 logout -> register/login Participant -> enrol -> logout -> login Organiser -> view enrolments,
