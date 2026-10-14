@@ -99,6 +99,14 @@ See *Repository Structure* above.
 1. Open `RaceDay.sln` in Visual Studio 2022 and set `RaceDay.API` as the startup project.
 2. Press **F5** (or run `dotnet run` in `RaceDay.API`). The root URL redirects to Swagger.
 
+### Swagger
+
+Swagger loads at the root URL and documents every controller (Auth, Profile,
+Events, Categories, Enrolments, Results). Log in via
+`POST /api/auth/login` in Swagger first (the browser session keeps the
+cookie), then exercise the protected endpoints from the same page.
+
+
 ## Note on schema deviation from Part 1
 
 The Events table stores `Distance` and `EventType`, which the original Part 1
