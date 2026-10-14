@@ -164,7 +164,7 @@ runs all unit tests.
 Green workflow run: <img width="954" height="950" alt="image" src="https://github.com/user-attachments/assets/786b8d25-63d1-4b71-9b0d-098eb074366d" />
 
 ### Video Presentation
-Unlisted YouTube video: https://youtu.be/vV5pQ7NL8O4?si=CGCWdxtaVdCiFKM1
+Unlisted YouTube video: 
 
 ### Github Link
 https://github.com/AphiweGans/Aphiwe_Gans_PART2_COMPLETED.git
