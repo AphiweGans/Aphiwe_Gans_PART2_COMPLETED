@@ -176,6 +176,12 @@ in-memory database, so no SQL Server is needed (this is also how CI runs them). 
 installs .NET 8, **validates the repository structure**, restores, builds the solution and
 runs all unit tests.
 
+- Workflow: `.github/workflows/dotnet-ci.yml` - validates the repo
+  structure, then restores, builds, and tests the API on every push to
+  `main` and on pull requests.
+- Screenshot of successful green build: `ADD_SCREENSHOT_HERE`
+
+
 ### GitHub Actions Screenshot
 Green workflow run: <img width="954" height="950" alt="image" src="https://github.com/user-attachments/assets/786b8d25-63d1-4b71-9b0d-098eb074366d" />
 
